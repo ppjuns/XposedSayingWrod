@@ -28,7 +28,7 @@ adb shell dumpsys activity activities | grep mResume
     }
 ```
 ### 接口解密
-接口请求顺利的话胡得到一串数字字母的字符串（8826b0bb81706007dd6a70586191651169a099cc5f0c48...）
+接口请求顺利的话会得到一串数字字母的字符串（8826b0bb81706007dd6a70586191651169a099cc5f0c48...）
 ```
     static /* synthetic */ Object lambda$provideResponseConcert$0(String str) {
         try {
