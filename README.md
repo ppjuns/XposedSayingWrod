@@ -1,6 +1,5 @@
 # XposedSayingWrod
-爱字mu版本v2.8.1，采用了网易易盾加固，其Applicaiton名为com.netease.nis.wrapper，包名为cn.nineton.sayingwrod，在Applicaiton调用了很多java2c方法来完成初始化，apk里面只有一个classes.dex文件有40多M。
-最后使用Fdex2来dump出对应的dex文件。
+爱字mu版本v2.8.1，采用了网易易盾加固，其Applicaiton名为com.netease.nis.wrapper，包名为cn.nineton.sayingwrod，在Applicaiton调用了很多java2c方法来完成初始化，apk里面只有一个classes.dex文件有40多M。尝试了frida-dumpdex,dumpdex等工具，最后在7.1.2的手机上使用Fdex2来dump出对应的dex文件。（fdex原理是在getclassloader.getdex.getfile）
 
 ### 寻找hook点
 我们可以使用命令找到当前Activity的名字，然后jadx打开dex文件找到对应类的源码
