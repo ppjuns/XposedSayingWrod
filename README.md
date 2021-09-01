@@ -11,7 +11,7 @@ adb shell dumpsys activity activities | grep mResume
 因为爱字幕使用了mvp的架构，网络请求都在presenter层中使用rxjava和retrofit来完成请求网络，所以在p层会调用v层的方法来改变ui界面。所以我们找到getView().result(list)方法，就可以找到返回值list。
 
 ### 接口加密
-爱字mu的请求接口采用加密的方法，将请求参数按照key升序排列，再将全部key和value进行md5编码，得到sign的请求参数值
+爱字mu的请求接口采用加密的方法，在ApiBaseParamsInterept拦截器上，将请求参数（公共参数和接口参数）按照key升序排列，再将全部key和value进行md5编码，得到sign的请求参数值
 ```
     private String sign(Map<String, String> map) {
         StringBuilder sb = new StringBuilder();
